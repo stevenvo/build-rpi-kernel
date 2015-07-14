@@ -1,21 +1,12 @@
-# Adafruit's Raspberry Pi Kernel-o-Matic
-
-![kernel-o-matic](/docs/pngn_kernelomatic_with_logos.gif?raw=true)
-
-A detailed guide for using the Kernel-o-Matic can be found on
-[The Adafruit Learning System][1]. If you are familiar with Vagrant and
-VirtualBox, a brief overview of the build process can be found below.
-
-If you are looking to compile a custom kernel with the PiTFT device tree overlays included,
-you can do that by using the [pitft branch][3] of this repo.
+# Building Raspberry Pi Kernel
 
 ## Compiling The Raspberry Pi Kernel
 
 Clone the git repo & start the vagrant box:
 
 ```
-$ git clone https://github.com/adafruit/Adafruit-Pi-Kernel-o-Matic.git Kernel-o-Matic
-$ cd Kernel-o-Matic
+$ git clone https://github.com/stevenvo/build-rpi-kernel
+$ cd build-rpi-kernel
 $ vagrant up
 ```
 
@@ -49,16 +40,8 @@ Compile with default options:
 ~$ sudo adabuild
 ```
 
-Compile [adafruit-raspberrypi-linux][2] using the `rpi-3.15.y` branch:
-
-```
-~$ sudo adabuild -r https://github.com/adafruit/adafruit-raspberrypi-linux -b rpi-3.15.y
-```
-
-A `tar.gz` archive will be available in the Kernel-o-Matic folder on the host machine
-after the custom kernel has been built. Copy the archive to your Pi and extact the
+A `tar.gz` archive will be available in the current folder on the host machine
+after the custom kernel has been built. Copy the archive to your Pi and extract the
 contents. Installation instructions are included in the archive.
 
-[1]: https://learn.adafruit.com/raspberry-pi-kernel-o-matic
-[2]: https://github.com/adafruit/adafruit-raspberrypi-linux
-[3]: https://github.com/adafruit/Adafruit-Pi-Kernel-o-Matic/tree/pitft
+Disclaimer: Forked from https://github.com/adafruit/Adafruit-Pi-Kernel-o-Matic
